@@ -58,7 +58,12 @@ public class TelaCarro implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+
         if (e.getSource() == btSalvar){
+            if(txtModelo.getText().equals("") ||txtAno.getText().equals("") || txtValor.getText().equals("")){
+                JOptionPane.showMessageDialog(null,"Preencha os campos em branco");
+            }else{
             modelo = txtModelo.getText();
             valor = Double.parseDouble(txtValor.getText());
             ano = Integer.parseInt(txtAno.getText());
@@ -68,6 +73,7 @@ public class TelaCarro implements ActionListener {
             txtModelo.setText("");
             txtAno.setText("");
             txtValor.setText("");
+            }
         }
         if (e.getSource() == btExibir){
             JOptionPane.showMessageDialog(null,"O modelo: "+ car.getModelo() +"\nO ano: "  + car.getAno() + "\nO valor: " + car.getValor());
