@@ -65,6 +65,9 @@ public class TelaCarro implements ActionListener {
 
             car = new Carro(modelo, valor, ano);
             JOptionPane.showMessageDialog(null,"Objeto salvo com sucesso!");
+            txtModelo.setText("");
+            txtAno.setText("");
+            txtValor.setText("");
         }
         if (e.getSource() == btExibir){
             JOptionPane.showMessageDialog(null,"O modelo: "+ car.getModelo() +"\nO ano: "  + car.getAno() + "\nO valor: " + car.getValor());
